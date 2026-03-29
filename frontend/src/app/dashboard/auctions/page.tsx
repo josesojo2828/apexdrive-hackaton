@@ -307,7 +307,7 @@ export default function AuctionsPage() {
                         title="Nueva subasta" 
                         cars={cars} 
                         onClose={() => setShowCreate(false)} 
-                        onSubmit={async (data) => {
+                        onSubmit={async (data: any) => {
                             await createAuction(data.carId, data.startingPrice, undefined, data.endDate, data.status);
                             setShowCreate(false);
                         }}
@@ -320,7 +320,7 @@ export default function AuctionsPage() {
                         isEdit
                         initialData={editingAuction}
                         onClose={() => setEditingAuction(null)} 
-                        onSubmit={async (data) => {
+                        onSubmit={async (data: any) => {
                             await updateAuction(editingAuction.id, data);
                             setEditingAuction(null);
                         }}
