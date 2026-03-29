@@ -9,7 +9,8 @@ import {
     Car,
     Wallet, 
     Banknote,
-    LogOut
+    LogOut,
+    Sparkles
 } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useLogin } from "@/features/auth/hooks/useLogin";
@@ -31,6 +32,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
     const adminItems = [
         { icon: LayoutDashboard, href: "/dashboard", label: "Panel" },
         { icon: Car, href: "/dashboard/cars", label: "Flota" },
+        { icon: Sparkles, href: "/dashboard/ai-cars", label: "AI_LAB" },
         { icon: Banknote, href: "/dashboard/finance", label: "Finanzas" },
         { icon: Users, href: "/dashboard/users", label: "Usuarios" },
         { icon: Wallet, href: "/dashboard/auctions", label: "Subastas" },
