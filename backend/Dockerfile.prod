@@ -1,0 +1,38 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY prisma ./prisma/
+
+RUN npm install
+
+COPY . .
+
+# Generate Prisma client (without prisma.config.ts which requires 'prisma/config' module)
+RUN npx prisma generate --schema=prisma/schema.prisma
+RUN npm run build
+
+# Stage 2: Production runner
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install netcat for db wait logic
+RUN apk add --no-cache netcat-openbsd
+
+# Copy only production dependencies
+COPY package*.json ./
+RUN npm install --only=production
+
+# Copy compiled app and prisma
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/prisma.config.ts ./
+
+
+# Expose app port
+EXPOSE 9999
+
+# Wait for postgres, run migration, then start
+CMD sh -c "until nc -z postgres 5432; do echo 'Waiting for postgres...'; sleep 2; done && npx prisma migrate deploy --schema=prisma/schema.prisma && node dist/src/main"

@@ -1,0 +1,25 @@
+FROM node:20-alpine
+
+# Install netcat for wait-for-db logic
+RUN apk add --no-cache netcat-openbsd
+
+# Create app directory and set ownership
+RUN mkdir -p /app && chown -R node:node /app
+
+WORKDIR /app
+
+# Switch to non-root user
+USER node
+
+COPY --chown=node:node package*.json ./
+COPY --chown=node:node prisma ./prisma/
+
+RUN npm install
+
+# Generate Prisma client at build time
+RUN npx prisma generate --schema=prisma/schema.prisma
+
+COPY --chown=node:node . .
+
+# The command is overridden via docker-compose to run migrations first
+CMD ["npm", "run", "dev"]

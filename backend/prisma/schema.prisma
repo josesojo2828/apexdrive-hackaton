@@ -1,0 +1,300 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  passwordHash  String         @map("password_hash")
+  firstName     String         @map("first_name")
+  lastName      String         @map("last_name")
+  phone         String?        @unique
+  role          UserRole       @default(USER)
+  status        UserStatus     @default(PENDING_VERIFICATION)
+  languaje      String         @default("es")
+  permissionId  String         @map("permission_id")
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime?      @updatedAt @map("updated_at")
+  deletedAt     DateTime?      @map("deleted_at")
+  address       Address?
+  auctionsWon   Auction[]      @relation("AuctionWinner")
+  auditLogs     AuditLog[]
+  bids          Bid[]
+  devices       Device[]
+  notifications Notification[]
+  profile       Profile?
+  rentals       Rental[]
+  sessions      Session[]
+  transactions  Transaction[]
+  ownedCars     Car[]          @relation("CarOwner")
+  permissions   Permission     @relation(fields: [permissionId], references: [id])
+  wallet        Wallet?
+
+  @@index([email, status])
+  @@map("users")
+}
+
+model Permission {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  list      String[]
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  users     User[]
+
+  @@map("permissions")
+}
+
+model AuditLog {
+  id        String    @id @default(uuid())
+  action    String
+  details   Json?
+  userId    String    @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("audit_logs")
+}
+
+model Address {
+  id        String    @id @default(uuid())
+  street    String
+  city      String
+  state     String?
+  country   String?
+  zipCode   String?   @map("zip_code")
+  userId    String    @unique @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("addresses")
+}
+
+model Profile {
+  id        String    @id @default(uuid())
+  birthDate DateTime? @map("birth_date")
+  avatarUrl String?   @map("avatar_url")
+  userId    String    @unique @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+model Session {
+  id        String    @id @default(uuid())
+  token     String    @unique
+  ipAddress String?   @map("ip_address")
+  userAgent String?   @map("user_agent")
+  expiresAt DateTime  @map("expires_at")
+  userId    String    @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model Device {
+  id        String    @id @default(uuid())
+  deviceId  String    @unique @map("device_id")
+  fcmToken  String?   @map("fcm_token")
+  userId    String    @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("devices")
+}
+
+model Notification {
+  id        String    @id @default(uuid())
+  title     String
+  content   String
+  isRead    Boolean   @default(false) @map("is_read")
+  userId    String    @map("user_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+model Car {
+  id          String    @id @default(uuid())
+  brand       String
+  model       String
+  year        Int
+  plate       String    @unique
+  color       String?
+  type        String
+  mileage     Int       @default(0)
+  status      CarStatus @default(AVAILABLE)
+  basePrice   Decimal?  @map("base_price") @db.Decimal(18, 2)
+  description String?
+  images      String[]
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime? @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+  ownerId     String?   @map("owner_id")
+  owner       User?     @relation("CarOwner", fields: [ownerId], references: [id])
+  auctions    Auction[]
+  logs        CarLog[]
+  rentals     Rental[]
+
+  @@index([status])
+  @@map("cars")
+}
+
+model CarLog {
+  id        String   @id @default(uuid())
+  carId     String   @map("car_id")
+  action    String
+  details   String?
+  createdAt DateTime @default(now()) @map("created_at")
+  car       Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
+
+  @@index([carId, createdAt])
+  @@map("car_logs")
+}
+
+model Rental {
+  id          String       @id @default(uuid())
+  userId      String       @map("user_id")
+  carId       String       @map("car_id")
+  startDate   DateTime     @map("start_date")
+  endDate     DateTime     @map("end_date")
+  status      RentalStatus @default(PENDING)
+  totalAmount Decimal      @map("total_amount") @db.Decimal(18, 2)
+  comments    String?
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime?    @updatedAt @map("updated_at")
+  paidAmount  Decimal      @default(0) @map("paid_amount") @db.Decimal(18, 2)
+  car         Car          @relation(fields: [carId], references: [id])
+  user        User         @relation(fields: [userId], references: [id])
+
+  @@index([status, startDate, endDate])
+  @@map("rentals")
+}
+
+model Auction {
+  id            String        @id @default(uuid())
+  carId         String        @map("car_id")
+  startDate     DateTime      @map("start_date")
+  endDate       DateTime      @map("end_date")
+  startingPrice Decimal       @map("starting_price") @db.Decimal(18, 2)
+  currentPrice  Decimal       @default(0) @map("current_price") @db.Decimal(18, 2)
+  status        AuctionStatus @default(UPCOMING)
+  winnerId      String?       @map("winner_id")
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime?     @updatedAt @map("updated_at")
+  car           Car           @relation(fields: [carId], references: [id])
+  winner        User?         @relation("AuctionWinner", fields: [winnerId], references: [id])
+  bids          Bid[]
+
+  @@index([status, endDate])
+  @@map("auctions")
+}
+
+model Bid {
+  id        String   @id @default(uuid())
+  auctionId String   @map("auction_id")
+  userId    String   @map("user_id")
+  amount    Decimal  @db.Decimal(18, 2)
+  createdAt DateTime @default(now()) @map("created_at")
+  auction   Auction  @relation(fields: [auctionId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([auctionId, amount(sort: Desc)])
+  @@map("bids")
+}
+
+model Wallet {
+  id        String   @id @default(uuid())
+  userId    String   @unique @map("user_id")
+  balance   Decimal  @default(0) @db.Decimal(18, 2)
+  updatedAt DateTime @updatedAt @map("updated_at")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("wallets")
+}
+
+model Transaction {
+  id          String            @id @default(uuid())
+  userId      String            @map("user_id")
+  amount      Decimal           @db.Decimal(18, 2)
+  type        TransactionType
+  status      TransactionStatus @default(COMPLETED)
+  referenceId String?           @map("reference_id")
+  description String?
+  createdAt   DateTime          @default(now()) @map("created_at")
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, type])
+  @@map("transactions")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+  BANNED
+}
+
+enum CarStatus {
+  AVAILABLE
+  RENTED
+  IN_AUCTION
+  SOLD
+  MAINTENANCE
+}
+
+enum RentalStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum AuctionStatus {
+  UPCOMING
+  ACTIVE
+  CLOSED
+  RESOLVED
+  CANCELLED
+}
+
+enum TransactionType {
+  RENTAL_PAYMENT
+  AUCTION_DEPOSIT
+  AUCTION_REFUND
+  AUCTION_FINAL_PAYMENT
+  WALLET_TOPUP
+  CAR_PURCHASE
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}

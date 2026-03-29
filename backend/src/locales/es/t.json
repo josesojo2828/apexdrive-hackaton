@@ -1,0 +1,86 @@
+{
+    "success": {
+        "create": "Creación exitosa",
+        "update": "Actualización exitosa",
+        "delete": "Eliminación completada",
+        "process": "Operación procesada correctamente",
+        "default": "Solicitud exitosa",
+        "login": "Inicio de sesión exitoso",
+        "logout": "Cierre de sesión exitoso"
+    },
+    "error": {
+        "default": "Ocurrió un error inesperado",
+        "generic": "Ocurrió un error inesperado en el servidor",
+        "bad_request": "La solicitud contiene datos incorrectos",
+        "unauthorized": "No tienes permisos para realizar esta acción",
+        "forbidden": "Acceso denegado",
+        "exists": "El registro ya existe en el sistema",
+        "not_found": "No se encontró el recurso solicitado",
+        "db": {
+            "relation_not_found": "No se encontró uno de los registros relacionados (Ej: El Usuario o Plan no existen)",
+            "unique_constraint": "No se pudo procesar: El registro ya existe (Dato duplicado)",
+            "foreign_key_constraint": "No se puede eliminar o modificar porque tiene datos asociados",
+            "invalid_data": "El formato de los datos es inválido (Posiblemente un ID incorrecto)"
+        }
+    },
+    "application": {
+        "management": "Gestión de Aplicación",
+        "category": { "title": "Gestión de Categorías", "name": "Categoría" },
+        "resource": { "title": "Gestión de Recursos", "name": "Recurso" },
+        "question": { "title": "Preguntas Frecuentes", "name": "Pregunta" },
+        "messages": { "title": "Mensajes Web", "name": "Mensaje" },
+        "testimonial": { "title": "Testimonios", "name": "Testimonio" },
+        "about": { "title": "Sobre Nosotros", "name": "Sobre Nosotros" },
+        "objective": { "title": "Objetivos", "name": "Objetivo" },
+        "social_media": { "title": "Redes Sociales", "name": "Red Social" }
+    },
+    "delivery": {
+        "management": "Gestión de Delivery",
+        "vehicle": { "title": "Mis Vehículos", "name": "Vehículo" },
+        "trip": { "title": "Carreras Realizadas", "name": "Carrera" },
+        "common_address": { "title": "Direcciones Comunes", "name": "Dirección" },
+        "driver": "Conductor",
+        "business": "Comercio",
+        "central_management": "Central de Operaciones"
+    },
+    "business": {
+        "management": "Gestión de Comercio",
+        "promotion": { "title": "Mis Promociones", "name": "Promoción" }
+    },
+    "vehicle": { "title": "Vehículos", "subtitle": "Gestión de vehículos registrados", "brand": "Marca", "model": "Modelo", "plate": "Placa", "type": "Tipo", "year": "Año" },
+    "trip": { 
+        "title": "Carreras", 
+        "subtitle": "Gestión de carreras y despachos", 
+        "origin": "Origen", 
+        "destination": "Destino", 
+        "status": "Estado", 
+        "amount": "Monto",
+        "business": "Comercio Solicitante",
+        "driver": "Conductor Asignado",
+        "origin_address": "Punto de Recogida (Sugerido)",
+        "destination_address": "Punto de Entrega (Sugerido)",
+        "status_pending": "Pendiente",
+        "status_accepted": "Aceptado",
+        "status_picked_up": "Recolectado",
+        "status_in_transit": "En Camino",
+        "status_delivered": "Entregado",
+        "status_cancelled": "Cancelado"
+    },
+    "common_address": { "title": "Direcciones Comunes", "subtitle": "Gestión de puntos de recogida y entrega frecuentes", "name": "Nombre", "address": "Dirección", "latitude": "Latitud", "longitude": "Longitud" },
+    "promotion": { "title_label": "Título", "discount": "Descuento", "start_date": "Fecha Inicio", "end_date": "Fecha Fin" },
+    "category": { "name": "Nombre", "description": "Descripción", "icon": "Icono", "color": "Color" },
+    "resource": { "name": "Nombre", "description": "Descripción", "category": "Categoría", "enabled": "Habilitado" },
+    "question": { "question": "Pregunta", "answer": "Respuesta", "enabled": "Habilitado" },
+    "messages": { "name": "Nombre", "email": "Correo Electrónico", "message": "Mensaje", "read": "Leído" },
+    "testimonial": { "name": "Nombre", "message": "Mensaje" },
+    "about": { "mision": "Misión", "vision": "Visión", "values": "Valores" },
+    "objective": { "objective": "Objetivo", "description": "Descripción", "icon": "Icono" },
+    "social_media": { "name": "Nombre", "url": "Enlace (URL)", "icon": "Icono" },
+    "action": {
+        "add": "Agregar",
+        "edit": "Editar",
+        "delete": "Borrar",
+        "view": "Ver",
+        "createdAt": "Creado el"
+    }
+}
