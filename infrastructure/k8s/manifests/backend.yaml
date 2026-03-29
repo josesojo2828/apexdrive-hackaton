@@ -26,13 +26,16 @@ spec:
           # 🚀 Registry Local de Cube Path
           image: localhost:5000/backend:latest
           env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: apexdrive-secrets
+                  key: database-url
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: apexdrive-secrets
                   key: db-password
-            - name: DATABASE_URL
-              value: "postgresql://postgres:$(DB_PASSWORD)@postgres:5432/apexdrive_db"
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
