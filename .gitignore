@@ -44,13 +44,10 @@ yarn-error.log*
 *.swp
 *.swo
 
-# Project specific
-source/
-documentation/
-mobile/
-ARCHITECTURE.md
-Makefile
-deploy.sh
-update.sh
+# Hidden folders
+ignore/
 docker/data/
 prisma/generated/
+.dart_tool/
+.idea/
+.vscode/

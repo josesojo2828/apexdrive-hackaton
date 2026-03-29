@@ -1,0 +1,13 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Globe -->
+  <circle cx="250" cy="250" r="180" stroke="#122C4F" stroke-width="12" fill="none"/>
+  
+  <!-- Meridians/Parallels -->
+  <ellipse cx="250" cy="250" rx="80" ry="180" stroke="#5B88B2" stroke-width="4" fill="none"/>
+  <path d="M70 250 H 430 M100 150 H 400 M100 350 H 400" stroke="#5B88B2" stroke-width="4" fill="none" opacity="0.5"/>
+  
+  <!-- Airplane icon -->
+  <g transform="translate(350, 150) rotate(-45)">
+    <path d="M0 0 L40 20 L0 40 L10 20 Z" fill="#122C4F"/>
+  </g>
+</svg>

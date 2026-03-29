@@ -1,0 +1,28 @@
+{
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "start": "Start",
+    "step1": {
+      "title": "Venture into the New",
+      "desc": "Get ready to deliver like never before."
+    },
+    "step2": {
+      "title": "Smart Navigation",
+      "desc": "Optimized routes for your daily deliveries."
+    },
+    "step3": {
+      "title": "Deliver and Earn",
+      "desc": "Manage your trips and maximize your earnings."
+    }
+  },
+  "auth": {
+    "login": {
+      "welcome": "Welcome\nBack",
+      "email": "Email Address",
+      "password": "Password",
+      "button": "Sign In",
+      "no_account": "No account? Register"
+    }
+  }
+}

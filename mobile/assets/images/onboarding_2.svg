@@ -1,0 +1,14 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Map base -->
+  <rect x="100" y="100" width="300" height="300" rx="20" fill="#FBF9E4" stroke="#122C4F" stroke-width="10"/>
+  
+  <!-- Map Lines -->
+  <path d="M100 200 L400 200 M100 300 L400 300 M200 100 L200 400 M300 100 L300 400" stroke="#5B88B2" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Pin -->
+  <path d="M250 250 C 250 250, 230 210, 250 190 C 270 210, 250 250, 250 250 Z" fill="#122C4F"/>
+  <circle cx="250" cy="205" r="5" fill="white"/>
+  
+  <!-- Suitcase handle -->
+  <path d="M180 100 V 70 C 180 60, 190 50, 200 50 H 300 C 310 50, 320 60, 320 70 V 100" stroke="#122C4F" stroke-width="15" fill="none"/>
+</svg>

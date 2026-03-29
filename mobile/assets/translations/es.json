@@ -1,0 +1,754 @@
+{
+  "success": {
+    "create": "Creación exitosa",
+    "update": "Actualización exitosa",
+    "delete": "Eliminación completada",
+    "process": "Operación procesada correctamente",
+    "default": "Solicitud exitosa",
+    "login": "Inicio de sesión exitoso",
+    "logout": "Cierre de sesión exitoso"
+  },
+
+  "error": {
+    "default": "Ocurrió un error inesperado",
+    "generic": "Ocurrió un error inesperado en el servidor",
+    "bad_request": "La solicitud contiene datos incorrectos",
+    "unauthorized": "No tienes permisos para realizar esta acción",
+    "forbidden": "Acceso denegado",
+    "exists": "El registro ya existe en el sistema",
+    "not_found": "No se encontró el recurso solicitado",
+    "db": {
+      "relation_not_found": "No se encontró uno de los registros relacionados",
+      "unique_constraint": "No se pudo procesar: El registro ya existe (Dato duplicado)",
+      "foreign_key_constraint": "No se puede eliminar o modificar porque tiene datos asociados",
+      "invalid_data": "El formato de los datos es inválido"
+    }
+  },
+  "application": {
+    "management": "Panel de Control",
+    "category": "Categorías de Entrega",
+    "resource": "Recursos Speed",
+    "question": "Soporte y Ayuda",
+    "messages": "Consultas Web",
+    "testimonial": "Experiencias",
+    "about": "Sobre Speed Delivery",
+    "objective": "Metas de Servicio",
+    "social_media": "Conéctate",
+    "value": "Nuestra Filosofía",
+    "orders": "Pedidos",
+    "couriers": "Repartidores",
+    "customers": "Clientes",
+    "tracking": "Seguimiento en Vivo",
+    "service_category": "Tipología de Servicios",
+    "service_plan": "Tarifas de Servicios"
+  },
+  "sidebar": {
+    "DASHBOARD": "Panel de Control",
+    "dashboard": "Panel de Control",
+    "realtime": "Monitoreo Realtime",
+    "logistics": "Logística y Flota",
+    "finance": "Gestión Financiera",
+    "settings": "Configuración General",
+    "content": "Contenido Publicitario",
+    "services": "Gestión Comercial",
+    "personal": "Área Personal"
+  },
+
+  "user": {
+    "management": "Gestión de Usuarios",
+    "address": "Direcciones",
+    "address_placeholder": "Describe tu dirección (calle, apto, ref...)",
+    "profile": "Mi Perfil",
+    "branches": "Sucursales y Puntos",
+    "session": "Seguridad de Sesión",
+    "my_management": "Área Personal",
+    "title": "Configuración de Usuario",
+    "subtitle": "Asigna roles y permisos dentro del sistema",
+    "firstName": "Nombre",
+
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "role": "Rol de Usuario",
+    "permission": "Perfil de Permisos",
+    "status": "Estado",
+    "status_active": "Activo",
+    "status_inactive": "Inactivo",
+    "kyc_none": "Sin Verificar",
+    "kyc_verified": "Verificado",
+    "2fa": "Doble Factor (2FA)",
+    "role_customer": "Cliente",
+    "role_driver": "Repartidor",
+    "role_business": "Comercio",
+    "role_support": "Soporte",
+    "role_admin": "Administrador"
+  },
+  "region": {
+    "region": "Zonas de Operación",
+    "country": "Países Disponibles",
+    "state": "Prefecturas",
+    "city": "Ciudades Cobertura",
+    "title": "Geolocalización",
+    "subtitle": "Administra las áreas donde Speed Drive está presente"
+  },
+  "delivery": {
+    "management": "Gestión de Entregas",
+    "vehicle": "Vehículos y Flota",
+    "trip": "Carreras Realizadas",
+    "common_address": "Direcciones Comunes",
+    "driver": "Conductor Asignado"
+  },
+  "vehicle": {
+    "title": "Gestión de Flota",
+    "subtitle": "Administra los vehículos de tus repartidores",
+    "brand": "Marca",
+    "model": "Modelo",
+    "plate": "Matrícula",
+    "type": "Tipo",
+    "year": "Año"
+  },
+  "trip": {
+    "title": "Registro de Carreras",
+    "subtitle": "Historial de envíos y recorridos",
+    "origin": "Punto de Inicio (Texto)",
+    "destination": "Punto de Destino (Texto)",
+    "amount": "Tarifa / Monto",
+    "status": "Estado de Carrera",
+    "business": "Comercio Solicitante",
+    "driver": "Conductor Asignado",
+    "origin_address": "Punto de Recogida (Base de Datos)",
+    "destination_address": "Punto de Entrega (Base de Datos)",
+    "status_pending": "Pendiente",
+    "status_accepted": "Aceptado",
+    "status_picked_up": "Recolectado",
+    "status_in_transit": "En Camino",
+    "status_delivered": "Entregado",
+    "status_cancelled": "Cancelado"
+  },
+  "common-address": {
+    "title": "Direcciones Comunas",
+    "subtitle": "Puntos de interés frecuentes para la logística",
+    "name_label": "Alias / Nombre",
+    "address_label": "Dirección Física",
+    "latitude": "Latitud",
+    "longitude": "Longitud",
+    "user": "Usuario Asociado"
+  },
+  "business": {
+    "MANAGEMENT": "Administración de Comercios",
+    "PROMOTION": "Campañas y Promos",
+    "profile": {
+      "title": "Perfil de Comercio",
+      "name": "Nombre Comercial",
+      "email": "Email de Negocio",
+      "phone": "Teléfono de Atención",
+      "website": "Sitio Web",
+      "description": "Descripción / Bio"
+    }
+  },
+
+  "subscription": {
+    "subscription": "Servicios Premium",
+    "title": "Membresías Speed Plus",
+    "subtitle": "Beneficios exclusivos para clientes y socios",
+    "plan": {
+      "title": "Planes de Suscripción",
+      "subtitle": "Tarifas y coberturas para socios comerciales"
+    }
+  },
+  "transaction": {
+    "management": "Módulo de Pagos",
+    "title": "Billetera Digital",
+    "subtitle": "Controla tus ganancias y reportes de pago",
+    "transaction": {
+      "title": "Historial de Pagos",
+      "subtitle": "Detalle de transacciones por envíos y pedidos"
+    },
+    "bank-account": {
+      "title": "Métodos de Pago",
+      "subtitle": "Configura tus cuentas para depósitos directos"
+    },
+    "crypto-wallet": {
+      "title": "Crypto Speed",
+      "subtitle": "Acepta pagos en activos digitales"
+    }
+  },
+  "address": {
+    "title": "Mis Direcciones",
+    "subtitle": "Guarda tus puntos frecuentes de entrega"
+  },
+  "device": {
+    "title": "Seguridad",
+    "subtitle": "Dispositivos conectados a tu cuenta"
+  },
+  "notification": {
+    "title": "Centro de Mensajes",
+    "subtitle": "Actualizaciones de tus últimos pedidos"
+  },
+  "profile": {
+    "title": "Perfil Personal",
+    "subtitle": "Tus datos básicos de contacto",
+    "general": "General",
+    "address": "Direcciones",
+    "business": "Comercio",
+    "vehicles": "Vehículos",
+    "documents": "Documentos"
+  },
+
+  "session": {
+    "title": "Sesiones Activas",
+    "subtitle": "Monitorea quién accede a tu cuenta"
+  },
+  "country": {
+    "title": "Soporte Nacional",
+    "subtitle": "Países con servicio activo"
+  },
+  "state": {
+    "title": "Estados/Prefecturas",
+    "subtitle": "División regional de operaciones"
+  },
+  "city": {
+    "title": "Cobertura Urbana",
+    "subtitle": "Ciudades con servicio de entrega en minutos"
+  },
+  "category": {
+    "name": "Categoría",
+    "description": "Resumen de servicios",
+    "icon": "Visual",
+    "color": "Color de Tema",
+    "order": "Orden de Visualización"
+  },
+  "plan": {
+    "name": "Nombre del Plan",
+    "cost": "Precio ($)",
+    "billing_cycle": "Periodicidad",
+    "category": "Categoría Asociada",
+    "attributes": "Detalles (JSON)",
+    "order": "Jerarquía",
+    "is_popular": "Plan Recomendado"
+  },
+  "service-category": {
+    "title": "Categorías de Servicios",
+    "subtitle": "Gestión de tipologías (Diseño, WhatsApp, Web...)"
+  },
+  "service-plan": {
+    "title": "Gestión de Planes",
+    "subtitle": "Define los precios y servicios específicos para el usuario"
+  },
+  "resource": {
+    "title": "Centro de Descargas",
+    "subtitle": "Manuales para socios y repartidores",
+    "name": "Nombre de Recurso",
+    "description": "Detalles técnicos",
+    "category": "Tipo de Archivo",
+    "enabled": "Disponible"
+  },
+  "question": {
+    "title": "Preguntas de Soporte",
+    "subtitle": "Resolución rápida de dudas sobre entregas",
+    "question": "Duda/Consulta",
+    "answer": "Solución",
+    "enabled": "Público"
+  },
+  "messages-web": {
+    "title": "Consultas de Landing",
+    "subtitle": "Leads y preguntas de nuevos usuarios",
+    "name": "Remitente",
+    "email": "Contacto",
+    "message": "Contenido del Mensaje",
+    "read": "Gestionador"
+  },
+  "messages": {
+    "title": "Bandeja de Entrada",
+    "subtitle": "Mensajes privados y soporte directo",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Detalle del Mensaje",
+    "read": "Revisado"
+  },
+  "testimonial": {
+    "title": "Opiniones Reales",
+    "subtitle": "Lo que dicen nuestros usuarios sobre Speed Delivery",
+    "name": "Cliente/Socio",
+    "message": "Comentario Destacado"
+  },
+  "about": {
+    "title": "Somos Speed Delivery",
+    "subtitle": "Reinventando la logística para latinos en SJM",
+    "mision": "Propósito",
+    "vision": "Ambicíón",
+    "values": "Principios",
+    "mission": "Nuestra Meta Vital",
+    "vision_title": "Dónde queremos llegar",
+    "values_title": "Nuestros Pilares",
+    "objectives_title": "Hoja de Ruta Speed",
+    "pretitle": "Logística & Corazón",
+    "hero_title_part1": "Envíos Sin Fronteras,",
+    "hero_title_accent": "Entregas en Minutos.",
+    "hero_subtitle": "Nacimos en San Juan para resolver la necesidad de transporte confiable para nuestra ciudad. Hoy somos el puente logístico de los sanjuaneros."
+  },
+  "value": {
+    "title": "Nuestros Valores",
+    "subtitle": "La base ética de cada entrega",
+    "title_label": "Valor Principal",
+    "description": "Alcance y definición",
+    "icon": "Representación"
+  },
+  "objective": {
+    "title": "Metas de Servicio",
+    "subtitle": "Indicadores para un servicio al 100%",
+    "objective": "Punto Estratégico",
+    "description": "Plan de acción",
+    "icon": "Símbolo"
+  },
+  "social-media": {
+    "title": "Redes Digitales",
+    "subtitle": "Estrategia de comunicación y marketing",
+    "name": "Plataforma",
+    "url": "Dirección URL",
+    "icon": "Avatar"
+  },
+  "social_media": {
+    "title": "Presencia Digital",
+    "subtitle": "Control de canales oficiales",
+    "name": "Red Social",
+    "url": "Perfil Técnico",
+    "icon": "Logo"
+  },
+  "action": {
+    "discard": "Cancelar",
+    "update": "Confirmar Cambios",
+    "add": "Agregar",
+    "add_address": "Agregar Dirección",
+    "edit": "Modificar",
+
+    "delete": "Anular",
+    "view": "Consultar",
+    "createdAt": "Fecha de Registro",
+    "processing": "Sincronizando...",
+    "modify_record": "Editar Parámetros",
+    "create_entry": "Agregar Nueva Entrada",
+    "terminate_record": "Cerrar Registro",
+    "save": "Registrar",
+    "upload_file": "Importar Documento"
+  },
+  "headers": {
+    "name": "Descripción",
+    "description": "Detalle",
+    "status": "Estado Actual",
+    "email": "Usuario",
+    "role": "Permisos",
+    "date": "Tiempo",
+    "actions": "Gestión",
+    "created_at": "Entrada"
+  },
+  "status": {
+    "active": "En Servicio",
+    "inactive": "Fuera de Línea"
+  },
+  "dashboard": {
+    "stats": {
+      "users": "Usuarios Totales",
+      "vehicles": "Flota Activa",
+      "trips": "Carreras Totales",
+      "revenue": "Ingresos Brutos",
+      "my_trips": "Mis Carreras",
+      "pending_trips": "Pedidos Pendientes",
+      "my_vehicles": "Mis Vehículos",
+      "rating": "Calificación Promedio",
+      "trips_requested": "Pedidos Hechos",
+      "active_trips": "Pedidos en Curso",
+      "saved_addresses": "Direcciones Guardadas",
+      "promotions": "Promociones Disponibles"
+    },
+    "TRIP_DISTRIBUTION": "Distribución de Carreras",
+    "trip_distribution": "Distribución de Carreras",
+    "NO_ACTIVITY": "Sin actividad detectada",
+    "no_activity": "Sin actividad detectada",
+    "RECENT_ACTIVITY": "Protocolo de Bitácora",
+    "recent_activity": "Protocolo de Bitácora",
+    "LATEST_SESSIONS": "Control de Sesiones",
+    "latest_sessions": "Control de Sesiones",
+    "OVERVIEW": "Monitor de Operaciones",
+    "overview": "Monitor de Operaciones",
+    "fleet_tracking": "Seguimiento de Flota",
+    "performance": "Rendimiento y Métricas",
+    "CHARTS_PLACEHOLDER": "Sincronizando flujo de datos...",
+
+    "charts_placeholder": "Sincronizando flujo de datos...",
+    "no_trips": "No se encontraron trayectos en este periodo",
+    "gross_balance": "Saldo en Bruto",
+    "search": "Rastrear pedido o recurso...",
+    "showing": "Mostrando",
+    "of": "de",
+    "all": "Todos",
+    "print_report": "Generar Reporte PDF",
+    "detail": {
+      "module_prefix": "Logística Core //",
+      "router_prefix": "Capa de Enlace //",
+      "resolver_prefix": "TICKET_TRACK_ID:",
+      "user": "Asignado",
+      "city": "Destino",
+      "region": "Área de Carga",
+      "country": "Jurisdicción",
+      "state": "Prefectura Destino",
+      "currency": "Divisa",
+      "bank-account": "Caja Principal",
+      "crypto-wallet": "Wallet Token",
+      "transaction": "Movimiento",
+      "subscription": "Plan SOCIO",
+      "subscription-plan": "Tipo de Membresía"
+    }
+  },
+  "dialog": {
+    "delete_confirm": "Esta acción borrará este registro de {slug}. Se perderá el historial asociado."
+  },
+  "nav": {
+    "home": "Inicio",
+    "directory": "Restaurantes",
+    "community": "Socios",
+    "about": "Sobre Nosotros",
+    "brand": "Speed Delivery",
+    "login": "Pedir Ahora",
+    "login_mobile": "Entrar a mi cuenta"
+  },
+  "hero": {
+    "badge": "Logística 2.0 • Gestión Inteligente",
+    "title": "Logística Inteligente para Empresas",
+    "description": "Control total de tu flota, rastreo en tiempo real y la red de repartidores más rápida de la región. Diseñado para escalar.",
+    "track": "Introduce tu código de rastreo...",
+    "btn_track": "Enviar",
+    "satisfied": "500+ Empresas Activas",
+    "location": "En SJM y alrededores"
+  },
+  "trust": {
+    "verified": "Seguimiento Real",
+    "support": "Soporte 24/7",
+    "secure": "Pago Seguro"
+  },
+  "landing": {
+    "categories": {
+      "title": "Tus servicios de Confianza.",
+      "subtitle": "Todo lo que necesitas, entregado en tu puerta en tiempo récord.",
+      "cta": "Explorar Servicios",
+      "items": {
+        "gastronomy": {
+          "title": "Entregas Locales",
+          "description": "Distribución eficiente de tus compras y envíos urbanos el mismo día."
+        },
+        "professional": {
+          "title": "Paquetería Express",
+          "description": "Envíos de documentos y paquetes pequeños entre prefecturas con máxima prioridad."
+        },
+        "products": {
+          "title": "Mandados y Compras",
+          "description": "Realizamos tus compras del supermercado o farmacia y las llevamos a tu destino."
+        }
+      }
+    },
+    "logo_cloud": {
+      "text": "Red de aliados logísticos distribuidos en SJM"
+    },
+    "value_proposition": {
+      "steps": {
+        "explore": {
+          "title": "Elige",
+          "desc": "Selecciona el tipo de envío o el servicio que necesitas realizar."
+        },
+        "connect": {
+          "title": "Rastrea",
+          "desc": "Mira el progreso de tu despacho en tiempo real desde tu móvil."
+        },
+        "participate": {
+          "title": "Recibe",
+          "desc": "Disfruta de tu entrega en la puerta de tu casa u oficina sin complicaciones."
+        }
+      }
+    },
+    "bento": {
+      "title": "Logística de Nueva Generación",
+      "subtitle": "Infraestructura diseñada para conectar el corazón de la comunidad con sus necesidades diarias.",
+      "network": {
+        "badge": "Operational_Area_v4.2",
+        "title": "Cobertura Total.",
+        "description": "Llegamos a cada rincón de San Juan de Los Morros. Nuestra red de repartidores expertos conoce los mejores caminos para evitar retrasos.",
+        "status_label": "Flota Libre",
+        "status_value": "Despliegue_Activo"
+      },
+      "verified": {
+        "title": "Calidad Speed",
+        "description": "Todos nuestros aliados están certificados para cumplir altos estándares de higiene y puntualidad."
+      },
+      "performance": {
+        "label": "Performance",
+        "value": "Optimizado_IA"
+      },
+      "interface": {
+        "label": "Interface",
+        "value": "One_Tap_Order"
+      }
+    },
+    "faq": {
+      "badge": "Resolvemos tus Dudas",
+      "title": "Todo sobre tus Entregas",
+      "subtitle": "¿Deseas saber más? Consulta aquí el funcionamiento operativo de Speed Delivery.",
+      "footer": "¿Problemas con un pedido? Chat de Soporte",
+      "contact": "Soporte Técnico",
+      "questions": [
+        {
+          "question": "¿Cuál es el costo de envío promedio?",
+          "answer": "El costo varía según la distancia y el tipo de pedido, pero siempre buscamos las tarifas más competitivas para nuestra comunidad. Puedes verlo antes de confirmar tu orden."
+        },
+        {
+          "question": "¿Cuánto tarda en llegar mi pedido?",
+          "answer": "Para entregas locales de comida, el tiempo promedio es de 25 a 45 minutos. Para paquetería express entre ciudades, garantizamos entrega al día siguiente en la mayoría de zonas."
+        },
+        {
+          "question": "¿Puedo ser repartidor de Speed Delivery?",
+          "answer": "¡Claro que sí! Si tienes moto, bicicleta o coche y hablas español y algo de japonés, puedes registrarte en nuestra sección de socios repartidores."
+        },
+        {
+          "question": "¿Qué métodos de pago aceptan?",
+          "answer": "Aceptamos tarjetas de crédito/débito locales, Konbini Pay, y nuestra propia billetera virtual Speed Drive con depósitos fáciles."
+        },
+        {
+          "question": "¿Es posible programar un envío?",
+          "answer": "Sí, puedes elegir el horario exacto en el que deseas recibir tu pedido o que pasemos a recoger un paquete para ser enviado."
+        },
+        {
+          "question": "¿Cómo garantizan la frescura de la comida?",
+          "answer": "Nuestros socios repartidores utilizan mochilas térmicas de alta tecnología que mantienen la temperatura ideal de los alimentos durante todo el trayecto."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Involúcrate con nosotros",
+      "title": "¿Vendes comida o productos?",
+      "description": "Aumenta tus pedidos automatizando tus entregas con nuestra flota profesional en todo SJM.",
+      "button": "Registrar mi tienda"
+    },
+    "stats": {
+      "items": [
+        { "label": "Entregas Realizadas", "detail": "Clientes Felices" },
+        { "label": "Usuarios en la Red", "detail": "Crecimiento Exponencial" },
+        { "label": "Socios Aliados", "detail": "Restaurantes y Tiendas" },
+        { "label": "Repartidores Activos", "detail": "En todo el territorio" }
+      ]
+    },
+    "testimonials": {
+      "badge": "Experiencias Speed",
+      "title": "Sabor y Rapidez",
+      "items": [
+        {
+          "name": "Carlos Méndez",
+          "role": "Cliente Frecuente",
+          "text": "Speed Delivery es increíble. La comida venezolana llega caliente a Nagoya como si estuviera en Tokyo. ¡Salvavidas total!"
+        },
+        {
+          "name": "Ana García",
+          "role": "Socia Comercial",
+          "text": "Desde que integramos Speed Delivery en mi restaurante, el volumen de pedidos se triplicó. ¡La logística es impecable!"
+        },
+        {
+          "name": "Roberto Suzuki",
+          "role": "Usuario Corporativo",
+          "text": "Utilizamos Speed para envíos de documentos urgentes entre oficinas en Osaka y Tokyo. Nunca fallan."
+        },
+        {
+          "name": "Elena Soto",
+          "role": "Repartidora Estelar",
+          "text": "Me encanta trabajar con un equipo que entiende mis necesidades y me permite ganar dinero extra manejando mis tiempos."
+        },
+        {
+          "name": "Marco Polo",
+          "role": "User Experience",
+          "text": "La app es súper fluida y el rastreador en tiempo real es de los mejores que he usado en SJM."
+        }
+      ]
+    },
+    "newsletter": {
+      "badge": "Speed News",
+      "title": "Ofertas de Envío Gratis",
+      "description": "Suscríbete para recibir cupones de descuento, nuevos menús y alertas de servicio en tu zona. No enviamos spam.",
+      "no_spam": "Sin spam.",
+      "success": {
+        "title": "¡Bienvenido a la red!",
+        "desc": "Checkea tu correo para un regalo de bienvenida."
+      },
+      "button": "Activar Beneficios",
+      "placeholder": "delivery@speed.jp",
+      "footer": "Privacidad garantizada. Puedes cancelar en cualquier momento."
+    },
+    "pricing": {
+      "badge": "Planes y Servicios",
+      "title": "Soluciones a tu Medida",
+      "subtitle": "Impulsa tu negocio con nuestros servicios especializados de marketing y tecnología.",
+      "categories": {
+        "design": {
+          "title": "Diseño",
+          "description": "Solo se entrega diseño y el comercio se encarga de su publicidad.",
+          "items": {
+            "design": { "name": "Diseño", "time": "1/ día" },
+            "video": { "name": "Video", "time": "1/3 días" }
+          }
+        },
+        "whatsapp": {
+          "title": "Difusión WhatsApp",
+          "description": "Solo se envían mensajes por Whatsapp, el cliente proporciona el diseño y el copy. Tanto grupos Propios (P) como grupos generales (X).",
+          "items": {
+            "basic": { "name": "Básico", "groups": "1 (+X)", "time": "Diaria" },
+            "normal": { "name": "Normal", "groups": "1 (+X)", "time": "Diaria" },
+            "premium": { "name": "Premium", "groups": "2 (+X)", "time": "Diaria" }
+          }
+        },
+        "social": {
+          "title": "Gestión Redes",
+          "description": "El cliente entrega el diseño y acceso a las redes sociales para su gestión eficiente.",
+          "items": {
+            "strategy": { "name": "Sesión Estrategia", "cost": "80$", "range": "Único" },
+            "presence": { "name": "Presencia Digital", "posts": "3/ semana", "stories": "1/ diaria", "reports": "1/ mensual", "cost": "130$", "range": "Mensual" },
+            "positioning": { "name": "Posicionamiento Estratégico", "posts": "4-5/ semana", "stories": "Estratégicas", "reports": "1/ mensual", "cost": "190$", "range": "Mensual" }
+          }
+        },
+        "web": {
+          "title": "SEO & Página Web",
+          "description": "El cliente proporciona información para el desarrollo: imágenes, texto, etc...",
+          "items": {
+            "landing": { "name": "Landing Page", "cost": "70$", "maintenance": "5$/m", "time": "1 semana" },
+            "catalog": { "name": "Catálogo Digital", "cost": "110$", "maintenance": "12$/m", "time": "2 semanas" }
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "description": "La red logística especializada en conectar deseos, envíos y el mejor sabor de San Juan de Los Morros.",
+    "brand": "Speed Delivery",
+    "sections": {
+      "platform": "Uso de Plataforma",
+      "resources": "Información Social",
+      "contact": "Centro de Ayuda"
+    },
+    "links": {
+      "directory": "Restaurantes",
+      "services": "Envíos Express",
+      "community": "Ser Repartidor",
+      "events": "Eventos Speed",
+      "blog": "Noticias Logísticas",
+      "support": "Preguntas Frecuentes",
+      "terms": "Legales",
+      "privacy": "Privacidad"
+    },
+    "location": "San Juan de Los Morros, Guárico",
+    "email": "hola@speeddelivery.com.ve",
+    "url": "www.speeddelivery.com.ve",
+    "copy": "Elevando el estándar de logística local.",
+    "status": "Red de Flota: Operativa",
+    "stack": "IA Logística & Real-time Tracking"
+  },
+  "auth": {
+    "layout": {
+      "back_to_home": "Volver al inicio",
+      "platform_access": "Acceso de Usuarios",
+      "community_rebirth_title": "La logística",
+      "community_rebirth_span": "vuelve a nacer.",
+      "community_rebirth_description": "Pide comida, envía paquetes o gestiona tu flota desde el panel más avanzado de Guárico. Velocidad garantizada.",
+      "social_proof": "+10,000 pedidos exitosos"
+    },
+    "login": {
+      "title": "Bienvenido a Speed Delivery",
+      "email": "Tu Correo",
+      "password": "Clave de Acceso",
+      "remember": "Mantener conectado",
+      "forgot": "¿Olvidaste tus datos?",
+      "button": "Entrar ahora",
+      "loading": "Verificando credenciales...",
+      "no_account": "¿Nuevo en la red?",
+      "register": "Crear mi cuenta gratis"
+    },
+    "register": {
+      "title": "Únete a la Red Speed",
+      "name": "Nombre de Usuario",
+      "email": "Correo de contacto",
+      "password": "Define una clave",
+      "confirm": "Verifica tu clave",
+      "terms": "Acepto los {terms} y la {privacy}",
+      "terms_link": "acuerdos legales",
+      "privacy_link": "política de datos",
+      "button": "Registrarme",
+      "loading": "Sincronizando...",
+      "has_account": "¿Ya eres parte?",
+      "login": "Inicia sesión aquí",
+      "strength": {
+        "label": "Seguridad:",
+        "low": "Simple",
+        "medium": "Buena",
+        "high": "Inquebrantable"
+      }
+    }
+  },
+  "community": {
+    "hero": {
+      "badge": "Ecosistema Speed v2.0",
+      "title": "Red de Aliados.",
+      "description": "Más que entregas, construimos el puente logístico de la comunidad. Conectamos negocios locales con miles de clientes en todo San Juan."
+    },
+    "social": {
+      "instagram": {
+        "title": "Speed Live",
+        "description": "Sigue nuestras rutas, conoce a los repartidores del mes y descubre nuevos sabores latinos en vivo.",
+        "button": "Ver historias"
+      },
+      "whatsapp": {
+        "title": "Central de Ayuda",
+        "description": "Estado de rutas, soporte en español para repartidores y networking logístico.",
+        "button": "Unirme al Chat"
+      }
+    },
+    "resources": {
+      "title": "Herramientas de Éxito",
+      "subtitle": "Todo lo necesario para una logística impecable en San Juan.",
+      "items": {
+        "embassy": {
+          "title": "Soporte Consular",
+          "description": "Directorio de embajadas y consulados latinos con canales de ayuda prioritaria.",
+          "category": "Ayuda"
+        },
+        "guide": {
+          "title": "Manual del Residente",
+          "description": "Cómo moverte en San Juan, trámites locales y regulaciones de delivery.",
+          "category": "Guía"
+        },
+        "social": {
+          "title": "Eventos Latinos",
+          "description": "Ferias gastronómicas, bazares y encuentros deportivos de nuestra comunidad.",
+          "category": "Eventos"
+        },
+        "legal": {
+          "title": "Consultas Laborales",
+          "description": "Asesoría para repartidores, contratos y normativas vigentes.",
+          "category": "Legal"
+        }
+      }
+    },
+    "team": {
+      "title": "Equipo Speed Delivery",
+      "description": "Locos por la eficiencia y apasionados por nuestra cultura latina.",
+      "members": {
+        "jose": {
+          "role": "Fundador & Visionario",
+          "bio": "Arquitecto de soluciones enfocado en reducir la fricción entre la necesidad y la entrega."
+        },
+        "support": {
+          "role": "Customer Success",
+          "bio": "Aquí para asegurar que cada paquete y plato llegue con una sonrisa."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Quieres ser aliado?",
+      "description": "Si tienes una flota, un restaurante o una idea para mejorar la logística en Guárico, hablemos.",
+      "button": "Conectar hoy"
+    }
+  }
+}

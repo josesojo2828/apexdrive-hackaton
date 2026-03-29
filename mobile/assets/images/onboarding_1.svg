@@ -1,0 +1,12 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain Background -->
+  <path d="M50 400 L150 200 L250 400 Z" fill="#5B88B2" opacity="0.6"/>
+  <path d="M200 400 L350 150 L500 400 Z" fill="#122C4F"/>
+  
+  <!-- Path -->
+  <path d="M250 400 C 250 400, 300 450, 250 500" stroke="#5B88B2" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M250 400 C 250 400, 200 350, 250 300" stroke="#5B88B2" stroke-width="15" fill="none" stroke-dasharray="10 10"/>
+  
+  <!-- Sun/Atmosphere -->
+  <circle cx="400" cy="100" r="40" fill="#FBF9E4" opacity="0.3"/>
+</svg>

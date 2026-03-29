@@ -1,0 +1,6 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="250" cy="250" r="200" fill="#FBF9E4" opacity="0.5"/>
+  <path d="M150 250 L250 200 L350 250 L250 300 Z" fill="#122C4F"/>
+  <path d="M250 150 L250 350" stroke="#5B88B2" stroke-width="20" stroke-linecap="round"/>
+  <text x="250" y="450" font-family="Arial" font-size="40" text-anchor="middle" fill="#122C4F" font-weight="bold">AdventureAdept</text>
+</svg>
