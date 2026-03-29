@@ -1,0 +1,134 @@
+{
+  "success": {
+    "create": "Success creation",
+    "update": "Success update",
+    "delete": "Deletion completed",
+    "process": "Operation processed correctly",
+    "default": "Request successful",
+    "login": "Login successful",
+    "logout": "Logout successful"
+  },
+  "error": {
+    "default": "An unexpected error occurred",
+    "generic": "Unexpected server error",
+    "bad_request": "Request contains incorrect data",
+    "unauthorized": "No permissions to perform this action",
+    "forbidden": "Access denied",
+    "exists": "Record already exists",
+    "not_found": "Resource not found",
+    "db": {
+      "relation_not_found": "Related record not found",
+      "unique_constraint": "Data already exists (duplicate)",
+      "foreign_key_constraint": "Cannot delete/modify due to associated data",
+      "invalid_data": "Invalid data format"
+    }
+  },
+  "application": {
+    "management": "ApexDrive Control",
+    "cars": "Car Inventory",
+    "auctions": "Auction Room",
+    "rentals": "Rental Management"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "cars": "Catalog",
+    "auctions": "Auctions",
+    "rentals": "Rentals",
+    "users": "Users",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "stats": {
+      "total_cars": "Total Cars",
+      "active_rentals": "Active Rentals",
+      "open_auctions": "Open Auctions",
+      "revenue": "Total Revenue"
+    },
+    "overview": "Ops Overview",
+    "recent_activity": "Recent Activity",
+    "latest_sessions": "Latest Sessions",
+    "no_activity": "No activity detected",
+    "search": "Search car, customer or auction..."
+  },
+  "cars": {
+    "title": "Car Catalog",
+    "subtitle": "Premium vehicle inventory management",
+    "brand": "Brand",
+    "model": "Model",
+    "year": "Year",
+    "price": "Base Price",
+    "status": "Status",
+    "actions": "Actions",
+    "add": "Add Vehicle",
+    "edit": "Edit",
+    "delete": "Delete",
+    "status_available": "Available",
+    "status_rented": "Rented",
+    "status_in_auction": "In Auction",
+    "status_sold": "Sold",
+    "status_maintenance": "Maintenance"
+  },
+  "auctions": {
+    "title": "Active Auctions",
+    "subtitle": "Real-time bids and manual closing",
+    "start_price": "Start Price",
+    "current_bid": "Current Bid",
+    "end_date": "Closing Date",
+    "status": "Status",
+    "bid": "Place Bid",
+    "close": "Close Auction",
+    "participants": "Participants",
+    "winner": "Winner"
+  },
+  "rentals": {
+    "title": "Rentals",
+    "subtitle": "Booking and availability control",
+    "customer": "Customer",
+    "car": "Vehicle",
+    "start_date": "Start",
+    "end_date": "End",
+    "total_price": "Total Price",
+    "status": "Status",
+    "complete": "Complete Rental"
+  },
+  "auth": {
+    "login": {
+      "title": "ApexDrive Login",
+      "email": "Email",
+      "password": "Password",
+      "button": "Access",
+      "loading": "Authenticating..."
+    },
+    "register": {
+      "title": "Join ApexDrive",
+      "button": "Register"
+    },
+    "layout": {
+      "back_to_home": "Back home",
+      "platform_access": "Platform Access",
+      "community_rebirth_title": "ApexDrive",
+      "community_rebirth_span": "Automotive excellence in every detail.",
+      "community_rebirth_description": "Join the auction and manage the most exclusive fleet in the region.",
+      "social_proof": "Join the most exclusive car collectors"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact VIP",
+    "login_mobile": "My Account"
+  },
+  "footer": {
+    "description": "The ultimate platform for collectors and premium motor enthusiasts. Quality, transparency and performance without compromise.",
+    "email": "contact@apexdrive.com",
+    "location": "HQ — Luxury District"
+  },
+  "user": {
+    "profile": "User Profile",
+    "settings": "Account Settings",
+    "role": "Role",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email"
+  }
+}

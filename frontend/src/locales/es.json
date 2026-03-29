@@ -1,0 +1,138 @@
+{
+  "success": {
+    "create": "Creación exitosa",
+    "update": "Actualización exitosa",
+    "delete": "Eliminación completada",
+    "process": "Operación procesada correctamente",
+    "default": "Solicitud exitosa",
+    "login": "Inicio de sesión exitoso",
+    "logout": "Cierre de sesión exitoso"
+  },
+  "error": {
+    "default": "Ocurrió un error inesperado",
+    "generic": "Ocurrió un error inesperado en el servidor",
+    "bad_request": "La solicitud contiene datos incorrectos",
+    "unauthorized": "No tienes permisos para realizar esta acción",
+    "forbidden": "Acceso denegado",
+    "exists": "El registro ya existe en el sistema",
+    "not_found": "No se encontró el recurso solicitado",
+    "db": {
+      "relation_not_found": "No se encontró uno de los registros relacionados",
+      "unique_constraint": "El registro ya existe (Dato duplicado)",
+      "foreign_key_constraint": "No se puede eliminar porque tiene datos asociados",
+      "invalid_data": "El formato de los datos es inválido"
+    }
+  },
+  "application": {
+    "management": "ApexDrive Control",
+    "cars": "Inventario de Autos",
+    "auctions": "Sala de Subastas",
+    "rentals": "Gestión de Alquileres"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "cars": "Catálogo",
+    "auctions": "Subastas",
+    "rentals": "Alquileres",
+    "users": "Usuarios",
+    "settings": "Ajustes"
+  },
+  "dashboard": {
+    "stats": {
+      "total_cars": "Total Autos",
+      "active_rentals": "Alquileres Activos",
+      "open_auctions": "Subastas Abiertas",
+      "revenue": "Ingresos Totales"
+    },
+    "overview": "Resumen Operativo",
+    "recent_activity": "Actividad Reciente",
+    "latest_sessions": "Últimas Sesiones",
+    "no_activity": "Sin actividad detectada",
+    "search": "Buscar auto, cliente o subasta..."
+  },
+  "cars": {
+    "title": "Catálogo de Autos",
+    "subtitle": "Gestión integral de vehículos premium",
+    "brand": "Marca",
+    "model": "Modelo",
+    "year": "Año",
+    "price": "Precio base",
+    "status": "Estado",
+    "actions": "Acciones",
+    "add": "Agregar Vehículo",
+    "edit": "Editar Vehículo",
+    "delete": "Eliminar Vehículo",
+    "status_available": "Disponible",
+    "status_rented": "Alquilado",
+    "status_in_auction": "En Subasta",
+    "status_sold": "Vendido",
+    "status_maintenance": "Mantenimiento"
+  },
+  "auctions": {
+    "title": "Subastas Activas",
+    "subtitle": "Pujas en tiempo real y cierre manual",
+    "start_price": "Precio Inicial",
+    "current_bid": "Puja Actual",
+    "end_date": "Fecha de Cierre",
+    "status": "Estado",
+    "bid": "Pujar",
+    "close": "Cerrar Subasta",
+    "participants": "Participantes",
+    "winner": "Ganador"
+  },
+  "rentals": {
+    "title": "Alquileres",
+    "subtitle": "Control de reservas y disponibilidad",
+    "customer": "Cliente",
+    "car": "Vehículo",
+    "start_date": "Inicio",
+    "end_date": "Fin",
+    "total_price": "Precio Total",
+    "status": "Estado",
+    "complete": "Finalizar Alquiler"
+  },
+  "auth": {
+    "login": {
+      "title": "Ingreso ApexDrive",
+      "email": "Correo",
+      "password": "Clave",
+      "button": "Acceder",
+      "loading": "Autenticando...",
+      "remember": "Recordarme",
+      "forgot": "¿Olvidaste tu clave?",
+      "no_account": "¿No tienes cuenta?",
+      "register": "Regístrate aquí"
+    },
+    "register": {
+      "title": "Unirse a ApexDrive",
+      "button": "Registrarse"
+    },
+    "layout": {
+      "back_to_home": "Volver al inicio",
+      "platform_access": "Acceso a plataforma",
+      "community_rebirth_title": "ApexDrive",
+      "community_rebirth_span": "Excelencia automotriz en cada detalle.",
+      "community_rebirth_description": "Accede a la subasta y gestión de la flota más exclusiva de la región.",
+      "social_proof": "Únete a los coleccionistas más exclusivos"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contactar VIP",
+    "login_mobile": "Mi Cuenta"
+  },
+  "footer": {
+    "description": "La plataforma definitiva para coleccionistas y entusiastas del automovilismo premium. Calidad, transparencia y rendimiento sin compromiso.",
+    "email": "contacto@apexdrive.com",
+    "location": "Sede Central — Distrito de Lujo"
+  },
+  "user": {
+    "profile": "Perfil de Usuario",
+    "settings": "Ajustes de Cuenta",
+    "role": "Rol",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Email"
+  }
+}

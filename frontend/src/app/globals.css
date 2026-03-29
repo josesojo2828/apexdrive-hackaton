@@ -1,0 +1,399 @@
+/* ============================================
+   Tailwind CSS v4 + DaisyUI v5
+   ============================================ */
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Carga TODOS los componentes DaisyUI (btn, card, modal, alert, input, etc.) */
+@plugin "daisyui";
+
+/* Tema "apex" — Hyper-Luxury Obsidian + Teal Dark Mode */
+@plugin "daisyui/theme" {
+  name: "apex";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  
+  /* Surface: Deep Luxury Obsidian */
+  --color-base-100: #0a0a0b;
+  --color-base-200: #111113;
+  --color-base-300: #18181b;
+  --color-base-content: #ffffff;
+  
+  /* Primary: Neon Kinetic Orange */
+  --color-primary: #FF6B00;
+  --color-primary-content: #000000;
+  
+  /* Secondary: Racing Red (High Performance) */
+  --color-secondary: #ff2d55;
+  --color-secondary-content: #ffffff;
+  
+  /* Accents */
+  --color-accent: #8cace8;
+  --color-accent-content: #0a0a0b;
+  
+  --color-neutral: #2f3131;
+  --color-neutral-content: #ffffff;
+  
+  --color-info: #3e5e95;
+  --color-success: #10b981;
+  --color-warning: #f9d072;
+  --color-error: #ef4444;
+  
+  --radius-selector: 1rem;
+  --radius-field: 1rem;
+  --radius-box: 1.5rem;
+  
+  /* Brand Variables for manual use */
+  --brand-blue: #FF6B00;
+  --brand-sky: #8cace8;
+  --brand-racing-red: #ff2d55;
+  --brand-gold: #f9d072;
+  --brand-pearl: #ffffff;
+  --brand-slate: #111113;
+  --brand-cloud: #18181b;
+  --brand-gradient-start: #FF6B00;
+  --brand-gradient-end: #0077ff;
+}
+
+/* ============================================
+   Tokens Tailwind personalizados del proyecto
+   ============================================ */
+@theme {
+  /* Forzamos modo oscuro */
+  --breakpoint-dark: class;
+
+  /* Fuentes (inyectadas por Next.js font optimization) */
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
+  --font-sans: var(--font-plus-jakarta-sans);
+
+  /* Paleta de marca — apuntan a variables CSS para ser theme-aware */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-racing-red: var(--brand-racing-red);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-pearl: var(--brand-pearl);
+  --color-brand-slate: var(--brand-slate);
+  --color-brand-cloud: var(--brand-cloud);
+  --color-brand-gradient-start: var(--brand-gradient-start);
+  --color-brand-gradient-end: var(--brand-gradient-end);
+  --color-brand-white: #ffffff;
+  /* Colores funcionales */
+  --color-speed-alert: var(--speed-alert);
+}
+
+/* ============================================
+   Base global
+   DaisyUI aplica fondo/texto según el tema
+   activo (winter). Solo sobreescribimos font.
+   ============================================ */
+body {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* ============================================
+   Animaciones personalizadas
+   ============================================ */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Luxury Utilities */
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-2xl border border-white/20 shadow-[0_20px_40px_rgba(18,44,79,0.05)];
+}
+
+.glass-card {
+  @apply bg-white/90 backdrop-blur-lg border border-white/20 hover:bg-white transition-all duration-500;
+}
+
+.kinetic-header {
+  @apply text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] italic text-brand-blue;
+}
+
+.ambient-shadow {
+  @apply shadow-[0_20px_50px_rgba(18,44,79,0.08)];
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scrollIndicator {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Clases de animación */
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.reveal {
+  @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
+}
+
+.reveal.active {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Mesh Gradient Animations */
+@keyframes mesh-move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10%, -10%) scale(1.1);
+  }
+  66% {
+    transform: translate(-5%, 15%) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.animate-mesh {
+  animation: mesh-move 20s ease-in-out infinite;
+}
+
+/* Shimmer Animation Profile */
+@keyframes shimmer-move {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-move 3s infinite;
+}
+
+/* Base Shimmer Style (to be used specifically where needed) */
+.shimmer-base {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+}
+
+/* Floating Shards */
+@keyframes floating-shard {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10px, 15px) rotate(5deg);
+  }
+}
+
+.animate-shard {
+  animation: floating-shard 8s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s ease-out forwards;
+}
+
+.animate-scroll-indicator {
+  animation: scrollIndicator 1.5s ease-in-out infinite;
+}
+
+/* Delays de animación */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+.animation-delay-1500 {
+  animation-delay: 1500ms;
+}
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+.animation-delay-3000 {
+  animation-delay: 3000ms;
+}
+.animation-delay-4000 {
+  animation-delay: 4000ms;
+}
+
+/* ============================================
+   Scroll Reveal (Intersection Observer)
+   ============================================ */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.scroll-reveal-fade.revealed {
+  opacity: 1;
+}
+
+/* ============================================
+   ESTILOS DE IMPRESIÓN (PARA REPORTES PDF)
+   ============================================ */
+@media print {
+  /* RESET GLOBAL: Permitir que el documento crezca infinitamente hacia abajo */
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* RESCATE DE VISIBILIDAD: Ocultamos todo el ruido visual del dashboard */
+  body * {
+    visibility: hidden;
+  }
+
+  /* ELIMINAR SCROLLS: Forzar que los padres del reporte no lo recorten */
+  .flex, .h-screen, .overflow-hidden, .overflow-y-auto, main, div, section {
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+
+  /* MOSTRAR SOLO EL REPORTE Y SUS HIJOS */
+  #report-content, #report-content * {
+    visibility: visible !important;
+  }
+
+  /* POSICIONAMIENTO: El reporte toma el control total de la hoja */
+  #report-content {
+    display: block !important;
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    padding: 1.5cm !important;
+    background: white !important;
+  }
+
+  /* EVITAR CORTES EN TABLAS */
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  table {
+    page-break-inside: auto !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  /* Forzar colores de fondo e impresiones */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ocultar basuras de impresión del navegador */
+  .no-print, button, aside, nav, header {
+    display: none !important;
+  }
+}
