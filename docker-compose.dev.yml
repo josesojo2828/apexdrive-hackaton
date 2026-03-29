@@ -56,17 +56,20 @@ services:
         condition: service_healthy
       redis:
         condition: service_started
+      minio:
+        condition: service_started
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-apexdrive_db}?schema=public
       REDIS_HOST: redis
       REDIS_PORT: 6379
       NODE_ENV: development
       JWT_SECRET: ${JWT_SECRET:-apexdrive_secret}
-      MINIO_ENDPOINT: minio
-      MINIO_PORT: 9000
-      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
-      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin}
-      MINIO_BUCKET: uploads
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      MINIO_ENDPOINT: ${MINIO_ENDPOINT:-minio}
+      MINIO_PORT: ${MINIO_PORT:-9000}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      INITIAL_USER_PASSWORD: ${INITIAL_USER_PASSWORD:-ChangeMe123!}
       PORT: 3000
     ports:
       - "${BACKEND_PORT_EXTERNAL:-10299}:3000"

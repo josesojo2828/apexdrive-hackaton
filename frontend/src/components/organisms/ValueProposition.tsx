@@ -38,7 +38,7 @@ export const ValueProposition = () => {
                           </div>
                           <div className="h-10 w-[1px] bg-black/5 hidden md:block" />
                           <p className="text-[9px] font-bold text-black/40 uppercase tracking-[0.3em] max-w-[200px] leading-relaxed">
-                               Plataforma experimental desarrollada para el Apex Drive Hackathon 2026.
+                               Plataforma experimental desarrollada para el ApexDrive Hackathon 2026.
                           </p>
                      </div>
 

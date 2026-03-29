@@ -10,7 +10,7 @@ export class MinioService implements OnModuleInit {
         this.client = new Minio.Client({
             endPoint: process.env.MINIO_ENDPOINT || 'localhost',
             port: parseInt(process.env.MINIO_PORT || '10210'),
-            useSSL: false, // Dev/Local environment
+            useSSL: false,
             accessKey: process.env.MINIO_ROOT_USER || 'minioadmin',
             secretKey: process.env.MINIO_ROOT_PASSWORD || 'minioadmin',
         });

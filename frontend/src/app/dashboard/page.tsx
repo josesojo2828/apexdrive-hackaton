@@ -75,7 +75,7 @@ export default function DashboardPage() {
                         {isAdmin ? 'Operation_Control' : 'User_Panel'}
                     </h2>
                     <p className="text-[11px] font-bold text-[#1D1D1F]/30 uppercase tracking-[0.3em]">
-                        {isAdmin ? 'Nexus System Administrator' : 'Apex Velocity Participant'}
+                        {isAdmin ? 'Nexus System Administrator' : 'ApexDrive Participant'}
                     </p>
                 </div>
                 <div className="flex items-center gap-3">

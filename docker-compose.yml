@@ -50,6 +50,13 @@ services:
       NODE_ENV: ${NODE_ENV:-development}
       JWT_SECRET: ${JWT_SECRET:-change_me}
       PORT: 9999
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      MINIO_ENDPOINT: minio
+      MINIO_PORT: 9000
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      MINIO_PUBLIC_URL: ${MINIO_PUBLIC_URL:-http://localhost:10210/apexdrive-assets}
+      INITIAL_USER_PASSWORD: ${INITIAL_USER_PASSWORD:-ChangeMe123!}
     user: "${UID:-1000}:${GID:-1000}"
     ports:
       - "${BACKEND_PORT_EXTERNAL:-10299}:9999"

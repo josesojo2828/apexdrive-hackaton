@@ -187,7 +187,7 @@ export const Header = ({ variant = "light" }: HeaderProps) => {
                             <div className="mt-auto py-12 space-y-8">
                                 <div className="space-y-2 opacity-20 group">
                                      <p className="text-[8px] font-black uppercase tracking-[0.5em] text-white">Próximo Lanzamiento</p>
-                                     <p className="text-[9px] font-medium text-white italic">Apex Velocity "Ghost Series" 2026</p>
+                                     <p className="text-[9px] font-medium text-white italic">ApexDrive "Ghost Series" 2026</p>
                                 </div>
                                 <h4 className="text-[5vw] font-black italic uppercase tracking-tighter leading-none select-none italic serif text-white opacity-5">Navegación</h4>
                             </div>
