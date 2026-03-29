@@ -141,7 +141,7 @@ export default function CarsPage() {
             {loading ? (
                 <div className={cn("grid gap-6", viewMode === "grid" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1")}>
                     {[...Array(8)].map((_, i) => (
-                        <div key={i} className={cn("bg-white border border-black/5 animate-pulse", viewMode === "grid" ? "h-[420px] rounded-2xl" : "h-24 rounded-xl")} />
+                        <div key={i} className={cn("bg-white border border-black/5 animate-pulse", viewMode === "grid" ? "h-[300px] rounded-2xl" : "h-24 rounded-xl")} />
                     ))}
                 </div>
             ) : (
@@ -266,10 +266,10 @@ function CarCard({ car, isAdmin, onDelete, onChangeStatus, viewMode = "grid" }: 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="group relative flex flex-col h-[460px] bg-white rounded-2xl border border-black/5 overflow-hidden hover:shadow-xl transition-all duration-300"
+            className="group relative flex flex-col h-fit bg-white rounded-2xl border border-black/5 overflow-hidden hover:shadow-lg transition-all duration-300"
         >
             {/* HEREO SECTION: Full-width Image */}
-            <div className="relative h-[180px] overflow-hidden bg-black/[0.02]">
+            <div className="relative h-[160px] overflow-hidden bg-black/[0.02]">
                 <AnimatePresence mode="wait">
                     {car.images?.[0] ? (
                         <motion.img 
@@ -314,9 +314,9 @@ function CarCard({ car, isAdmin, onDelete, onChangeStatus, viewMode = "grid" }: 
             </div>
 
             {/* CONTENT SECTION */}
-            <div className="flex-1 p-5 flex flex-col justify-between bg-white relative">
-                <div>
-                    <div className="flex items-start justify-between mb-2">
+            <div className="flex-1 p-4 flex flex-col bg-white relative">
+                <div className="space-y-3">
+                    <div className="flex items-start justify-between">
                         <div className="flex flex-col">
                             <h3 className="text-[7px] font-black text-brand-blue/30 uppercase tracking-[0.3em] mb-0.5">C_ENGINEERED_BY</h3>
                             <h3 className="text-base font-black text-brand-blue tracking-tighter uppercase leading-none group-hover:text-primary transition-colors">
@@ -336,9 +336,9 @@ function CarCard({ car, isAdmin, onDelete, onChangeStatus, viewMode = "grid" }: 
                 </div>
 
                 {/* ACTION SECTION */}
-                <div className="flex items-end justify-between pt-4 border-t border-black/5">
+                <div className="flex items-end justify-between pt-3 mt-4 border-t border-black/5">
                     <div>
-                        <p className="text-[7px] font-black text-brand-blue/15 uppercase tracking-[0.2em] mb-1">ESTIMATED_VALUE</p>
+                        <p className="text-[7px] font-black text-brand-blue/15 uppercase tracking-[0.2em] mb-0.5">ESTIMATED_VALUE</p>
                         <p className="text-xl font-black text-brand-blue italic tracking-tighter leading-none">
                             ${car.basePrice?.toLocaleString()}
                         </p>

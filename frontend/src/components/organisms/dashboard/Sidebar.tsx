@@ -93,7 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
                                 
                                 {/* Active Indicator Dot */}
                                 {isActive && (
-                                    <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-primary rounded-full shadow-[0_0_15px_#8cace8]" />
+                                    <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-primary rounded-full shadow-[0_0_15px_#0066FF]" />
                                 )}
 
                                 {/* Hover Tooltip (Kinetic Style) */}

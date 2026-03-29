@@ -20,9 +20,9 @@
   --color-base-300: #18181b;
   --color-base-content: #ffffff;
   
-  /* Primary: Neon Kinetic Orange */
-  --color-primary: #FF6B00;
-  --color-primary-content: #000000;
+  /* Primary: Electric Kinetic Blue */
+  --color-primary: #4179A0;
+  --color-primary-content: #f2f2f2;
   
   /* Secondary: Racing Red (High Performance) */
   --color-secondary: #ff2d55;
@@ -45,15 +45,15 @@
   --radius-box: 1.5rem;
   
   /* Brand Variables for manual use */
-  --brand-blue: #FF6B00;
+  --brand-blue: #155E7A;
   --brand-sky: #8cace8;
   --brand-racing-red: #ff2d55;
   --brand-gold: #f9d072;
   --brand-pearl: #ffffff;
   --brand-slate: #111113;
   --brand-cloud: #18181b;
-  --brand-gradient-start: #FF6B00;
-  --brand-gradient-end: #0077ff;
+  --brand-gradient-start: #358EDF;
+  --brand-gradient-end: #00D1FF;
 }
 
 /* ============================================
