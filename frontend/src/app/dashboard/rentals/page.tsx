@@ -210,8 +210,8 @@ export default function RentalsPage() {
                                         <td className="px-5 py-3">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-10 h-7 rounded-lg bg-slate-50 overflow-hidden border border-black/5 flex items-center justify-center p-0.5">
-                                                    {rental.car?.images?.[0] ? (
-                                                        <img src={rental.car.images[0]} alt="" className="w-full h-full object-contain" />
+                                                    {(rental.car as any)?.images?.[0] ? (
+                                                        <img src={(rental.car as any).images[0]} alt="" className="w-full h-full object-contain" />
                                                     ) : <Car size={12} className="text-slate-300" />}
                                                 </div>
                                                 <div>

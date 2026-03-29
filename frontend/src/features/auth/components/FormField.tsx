@@ -5,7 +5,7 @@ import { IconName } from "@/config/icons";
 interface FormFieldProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     error?: string;
-    icon?: IconName;
+    icon?: any;
     showPasswordToggle?: boolean;
     onTogglePassword?: () => void;
     showPassword?: boolean;

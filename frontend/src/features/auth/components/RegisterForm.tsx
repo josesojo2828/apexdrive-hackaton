@@ -164,7 +164,7 @@ export const RegisterForm = () => {
             {/* Submit Button */}
             <Button
                 type="submit"
-                variant="DEFAULT"
+                variant="PRIMARY"
                 size="LG"
                 className="w-full h-12 bg-black text-white rounded-xl group"
                 isLoading={isLoading}

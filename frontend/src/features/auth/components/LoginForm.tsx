@@ -83,7 +83,7 @@ export const LoginForm = () => {
             {/* Submit Button */}
             <Button
                 type="submit"
-                variant="DEFAULT"
+                variant="PRIMARY"
                 size="LG"
                 className="w-full h-12 rounded-xl bg-black text-white hover:bg-black/90 border-0 group transition-all active:scale-95"
                 isLoading={isLoading}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Navigation2, Building2 } from "lucide-react";
+import { Navigation2, Building2, Activity } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { Map, MapMarker, MarkerContent, MarkerPopup, MapControls } from "@/components/ui/map";
 
@@ -47,7 +47,7 @@ export default function FleetMap({ locations, className, height = "600px" }: Fle
                                 )}
                                 <div className={cn(
                                     "relative w-12 h-12 rounded-[1.2rem] shadow-2xl flex items-center justify-center border transition-all duration-700 group-hover/marker:scale-125 group-hover/marker:rotate-6",
-                                    loc.type === 'DRIVER' 
+                                    loc.type === 'DRIVER'
                                         ? (loc.status === 'ONLINE' ? "bg-brand-blue border-white/20 text-white shadow-brand-blue/30" : "bg-black/10 border-transparent text-black/20")
                                         : "bg-white border-black/5 text-brand-blue shadow-lg"
                                 )}>
@@ -60,7 +60,7 @@ export default function FleetMap({ locations, className, height = "600px" }: Fle
                                 <div className="flex items-center gap-4">
                                     <div className={cn(
                                         "w-12 h-12 rounded-[1rem] flex items-center justify-center shadow-inner",
-                                        loc.type === 'DRIVER' 
+                                        loc.type === 'DRIVER'
                                             ? (loc.status === 'ONLINE' ? "bg-brand-blue/5 text-brand-blue" : "bg-black/5 text-black/20")
                                             : "bg-primary/10 text-primary"
                                     )}>
