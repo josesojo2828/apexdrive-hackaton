@@ -58,7 +58,7 @@ spec:
                   name: apexdrive-secrets
                   key: minio-root-password
             - name: MINIO_PUBLIC_URL
-              value: "http://apexdrive.quanticarch.com/apexdrive-assets"
+              value: "https://apexdrive.quanticarch.com/apexdrive-assets"
             - name: INITIAL_USER_PASSWORD
               valueFrom:
                 secretKeyRef:
