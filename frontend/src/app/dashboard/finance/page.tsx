@@ -118,7 +118,7 @@ export default function FinancePage() {
                                 <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} />
                                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
                                 <Tooltip contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', fontSize: 11, fontWeight: 700 }}
-                                    formatter={(value: number) => [`$${value.toLocaleString()}`, '']} />
+                                    formatter={(value: any) => [`$${value.toLocaleString()}`, '']} />
                                 <Legend iconType="circle" wrapperStyle={{ fontSize: 10, fontWeight: 700 }} />
                                 <Area type="monotone" dataKey="rentals" name="Alquileres" stroke="#3b82f6" fill="url(#gradRentals)" strokeWidth={2} />
                                 <Area type="monotone" dataKey="transactions" name="Transacciones" stroke="#22c55e" fill="url(#gradTx)" strokeWidth={2} />
@@ -143,7 +143,7 @@ export default function FinancePage() {
                                             {data.txByType.map((_, i) => <Cell key={i} fill={pieColors[i % pieColors.length]} />)}
                                         </Pie>
                                         <Tooltip contentStyle={{ borderRadius: 8, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', fontSize: 11, fontWeight: 700 }}
-                                            formatter={(value: number) => [`$${value.toLocaleString()}`, '']} />
+                                            formatter={(value: any) => [`$${value.toLocaleString()}`, '']} />
                                     </PieChart>
                                 </ResponsiveContainer>
                             </div>
@@ -172,7 +172,7 @@ export default function FinancePage() {
                                 <BarChart data={data.txByStatus.map(s => ({ ...s, name: statusLabels[s.status] || s.status }))}>
                                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 8, fontWeight: 700, fill: '#94a3b8' }} />
                                     <Tooltip contentStyle={{ borderRadius: 8, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', fontSize: 11, fontWeight: 700 }}
-                                        formatter={(value: number) => [`$${value.toLocaleString()}`, '']} />
+                                        formatter={(value: any) => [`$${value.toLocaleString()}`, '']} />
                                     <Bar dataKey="volume" radius={[6, 6, 0, 0]} barSize={28}>
                                         {data.txByStatus.map((s, i) => (
                                             <Cell key={i} fill={s.status === 'COMPLETED' ? '#22c55e' : s.status === 'PENDING' ? '#f59e0b' : s.status === 'FAILED' ? '#ef4444' : '#6b7280'} />
