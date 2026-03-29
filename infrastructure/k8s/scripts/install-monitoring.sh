@@ -5,6 +5,10 @@
 echo "📈 Instalando Helm..."
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
+# 🗝️ Indicarle a Helm dónde está el cluster de K3s
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+chmod 644 /etc/rancher/k3s/k3s.yaml
+
 echo "📊 Agregando repositorios de Prometheus..."
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update

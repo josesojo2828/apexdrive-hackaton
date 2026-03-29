@@ -14,6 +14,11 @@ COPY --chown=node:node . .
 RUN mkdir -p .next && chown -R node:node .next
 CMD ["npm", "run", "dev"]
 
+# --- Install dependencies stage ---
+FROM base AS deps
+COPY package.json package-lock.json* ./
+RUN npm install
+
 # --- Builder Stage ---
 FROM base AS builder
 # Necesitamos estas variables en tiempo de BUILD (Next.js las hornea en el JS)

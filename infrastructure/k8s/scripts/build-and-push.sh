@@ -2,7 +2,11 @@
 # build-and-push.sh
 # 🏁 Automatización para ApexDrive // QuanticArch Hackaton Edition
 
-echo "🐳 Iniciando proceso de empaquetado (Build & Push)..."
+# 🎯 Detectar la raíz del proyecto (3 niveles arriba de scripts/)
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+cd "$PROJECT_ROOT"
+
+echo "🐳 Iniciando proceso de empaquetado desde: $PROJECT_ROOT"
 
 # 1. Backend
 echo "🧠 Construyendo Imagen del Backend..."
