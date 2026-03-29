@@ -1,8 +1,8 @@
 #!/bin/bash
 # build-and-push.sh
-# 🏁 Automatización para ApexDrive // QuanticArch Hackaton Edition
+set -e
 
-# 🎯 Detectar la raíz del proyecto (3 niveles arriba de scripts/)
+# 🎯 Detectar la raíz del proyecto
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 cd "$PROJECT_ROOT"
 
