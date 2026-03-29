@@ -36,6 +36,7 @@ COPY package*.json ./
 RUN npm install --only=production
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
+COPY prisma.config.ts ./
 
 # Default port
 ENV PORT=9999
