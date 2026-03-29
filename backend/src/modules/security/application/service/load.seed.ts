@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "src/config/prisma.service";
-import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class LoadSeedService {
@@ -8,113 +7,147 @@ export class LoadSeedService {
         this.execute();
     }
 
-    private readonly carImages = [
-        "/images/1.png",
-        "/images/2.png",
-        "/images/lambo_revuelto_white_studio.png",
-        "/images/ferrari_purosangue_red_studio.png",
-        "/images/porsche_911_gt3_blue_studio.png",
-        "/images/mercedes_amg_gt_black_studio.png",
-        "/images/bmw_m4_cs_green_studio.png",
-        "/images/audi_rs6_performance_gray_studio.png",
-        "/images/mclaren_750s_orange_studio.png",
-        "/images/aston_martin_valiant_silver_studio.png",
-        "/images/range_rover_sv_gold_studio.png",
-        "/images/bentley_batur_blue_studio.png"
+    private readonly cars = [
+        {
+            brand: "Aston Martin",
+            model: "Valiant",
+            image: "aston_martin_valiant_silver_studio.png",
+            color: "Silver",
+            price: 2500000.00,
+            type: "Supercar",
+            description: "Aston Martin Valiant: A track-focused, road-legal masterpiece of engineering and raw performance.",
+            plate: "APX-VALI"
+        },
+        {
+            brand: "Audi",
+            model: "RS6 Performance",
+            image: "audi_rs6_performance_gray_studio.png",
+            color: "Nardo Gray",
+            price: 130000.00,
+            type: "Sport Wagon",
+            description: "The Audi RS6 Performance: The ultimate everyday supercar with unmatched utility and speed.",
+            plate: "APX-RS6P"
+        },
+        {
+            brand: "Bentley",
+            model: "Batur",
+            image: "bentley_batur_blue_studio.png",
+            color: "Azurite Blue",
+            price: 2000000.00,
+            type: "Grand Tourer",
+            description: "Bentley Batur: Handcrafted luxury meeting the most powerful W12 engine ever created.",
+            plate: "APX-BATR"
+        },
+        {
+            brand: "BMW",
+            model: "M4 CS",
+            image: "bmw_m4_cs_green_studio.png",
+            color: "Frozen Isle of Man Green",
+            price: 125000.00,
+            type: "Sport",
+            description: "BMW M4 CS: Lightweight construction and track-tuned chassis for the ultimate driving precision.",
+            plate: "APX-M4CS"
+        },
+        {
+            brand: "Ferrari",
+            model: "Purosangue",
+            image: "ferrari_purosangue_red_studio.png",
+            color: "Rosso Corsa",
+            price: 400000.00,
+            type: "SUV Supercar",
+            description: "Ferrari Purosangue: The first ever four-door, four-seater Ferrari. Pure blood, pure performance.",
+            plate: "APX-PURO"
+        },
+        {
+            brand: "Lamborghini",
+            model: "Revuelto",
+            image: "lambo_revuelto_white_studio.png",
+            color: "Bianco Monocerus",
+            price: 600000.00,
+            type: "Hypercar",
+            description: "Lamborghini Revuelto: The first hybrid V12 HPEV, defining a new paradigm in performance.",
+            plate: "APX-REVU"
+        },
+        {
+            brand: "McLaren",
+            model: "750S",
+            image: "mclaren_750s_orange_studio.png",
+            color: "Papaya Orange",
+            price: 330000.00,
+            type: "Supercar",
+            description: "McLaren 750S: Lighter, more powerful, and even more engaging. The benchmark for supercars.",
+            plate: "APX-750S"
+        },
+        {
+            brand: "Mercedes-AMG",
+            model: "GT Black Series",
+            image: "mercedes_amg_gt_black_studio.png",
+            color: "Obsidian Black",
+            price: 350000.00,
+            type: "Track Spec",
+            description: "Mercedes-AMG GT Black Series: Motorsport technology translated for the road. Aggression in its purest form.",
+            plate: "APX-AMGT"
+        },
+        {
+            brand: "Porsche",
+            model: "911 GT3 RS",
+            image: "porsche_911_gt3_blue_studio.png",
+            color: "Shark Blue",
+            price: 225000.00,
+            type: "Precision Sport",
+            description: "Porsche 911 GT3 RS: Aerodynamics and chassis engineering pushed to the absolute limits of the possible.",
+            plate: "APX-GT3R"
+        },
+        {
+            brand: "Range Rover",
+            model: "SV",
+            image: "range_rover_sv_gold_studio.png",
+            color: "Lantau Bronze / Gold",
+            price: 215000.00,
+            type: "Luxury SUV",
+            description: "Range Rover SV: The pinnacle of luxury and capability. Refinement without compromise.",
+            plate: "APX-RRSV"
+        }
     ];
 
-    private readonly carBrands = ["Ferrari", "Lamborghini", "Porsche", "Mercedes-Benz", "BMW", "Audi", "McLaren", "Aston Martin", "Land Rover", "Bentley"];
-    private readonly carModels = ["Purosangue", "Revuelto", "911 GT3 RS", "AMG GT", "M4 CS", "RS6 Avant", "750S", "Valiant", "Range Rover SV", "Batur"];
-    private readonly firstNames = ["James", "Robert", "John", "Michael", "David", "William", "Richard", "Joseph", "Thomas", "Christopher", "Charles", "Daniel", "Matthew", "Anthony", "Mark", "Donald", "Steven", "Paul", "Andrew", "Joshua"];
-    private readonly lastNames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin"];
-
     public async execute() {
-        console.log('[LoadSeedService] Initializing Seed Generation...');
+        console.log('[LoadSeedService] Initializing Selective Fleet Generation...');
 
-        const permitAdmin = await this.prisma.permission.findFirst({ where: { name: 'admin' } });
-        const permitUser = await this.prisma.permission.findFirst({ where: { name: 'user' } });
-
-        if (!permitAdmin || !permitUser) {
-            console.log('[LoadSeedService] ❌ Missing permissions. Skip.');
-            return;
-        }
-
-        const salt = await bcrypt.genSalt();
-        const passwordHash = await bcrypt.hash('abc.12345', salt);
-
-        // 1. Create 80 Users
-        console.log('[LoadSeedService] Creating 80 Users with Wallets...');
-        for (let i = 1; i <= 80; i++) {
-            const firstName = this.firstNames[i % this.firstNames.length];
-            const lastName = this.lastNames[i % this.lastNames.length];
-            const email = `user${i}@apexdrive.com`;
-            const user = await this.prisma.user.upsert({
-                where: { email },
-                update: { status: 'ACTIVE' },
-                create: {
-                    email,
-                    passwordHash,
-                    firstName,
-                    lastName,
-                    status: 'ACTIVE',
-                    role: i <= 5 ? 'ADMIN' : 'USER',
-                    permissionId: i <= 5 ? permitAdmin.id : permitUser.id,
-                    profile: { create: { avatarUrl: `https://i.pravatar.cc/150?u=${i}` } },
-                    wallet: { create: { balance: (Math.random() * 50000).toFixed(2) as any } }
-                }
-            });
-
-            // Sample Transactions
-            await this.prisma.transaction.create({
-                data: {
-                    userId: user.id,
-                    amount: 500 + Math.random() * 2000,
-                    type: 'WALLET_TOPUP',
-                    status: 'COMPLETED',
-                    description: 'Initial balance'
-                }
-            });
-        }
-
-        // 2. Create 100 Cars
-        console.log('[LoadSeedService] Creating 100 Cars with History...');
-        const carStatuses: any[] = ['AVAILABLE', 'RENTED', 'IN_AUCTION', 'SOLD', 'MAINTENANCE'];
-        for (let i = 1; i <= 100; i++) {
-            const brandIndex = Math.floor(Math.random() * this.carBrands.length);
-            const status = carStatuses[i % carStatuses.length];
-            const plate = `APX-${i.toString().padStart(4, '0')}`;
+        // Create the 10 High-Performance Cars
+        for (const carData of this.cars) {
+            const status = "AVAILABLE";
             
             const car = await this.prisma.car.upsert({
-                where: { plate },
+                where: { plate: carData.plate },
                 update: { status },
                 create: {
-                    brand: this.carBrands[brandIndex],
-                    model: this.carModels[brandIndex],
-                    year: 2022 + Math.floor(Math.random() * 3),
-                    plate,
-                    color: "Various",
-                    type: brandIndex > 5 ? "Supercar" : "Sport",
-                    mileage: Math.floor(Math.random() * 5000),
+                    brand: carData.brand,
+                    model: carData.model,
+                    year: 2024,
+                    plate: carData.plate,
+                    color: carData.color,
+                    type: carData.type,
+                    mileage: 0,
                     status,
-                    basePrice: (50000 + Math.random() * 200000).toFixed(2) as any,
-                    description: `Precision engineered ${this.carModels[brandIndex]}. Apex Velocity Performance package included.`,
-                    images: [this.carImages[i % this.carImages.length]]
+                    basePrice: carData.price as any,
+                    description: carData.description,
+                    images: [`/images/${carData.image}`]
                 }
             });
 
-            // Create some history logs only if they don't exist
+            // Create history logs
             const logsCount = await this.prisma.carLog.count({ where: { carId: car.id } });
             if (logsCount === 0) {
                 await this.prisma.carLog.createMany({
                     data: [
-                        { carId: car.id, action: 'ACQUISITION', details: 'Vehicle added to the high-performance fleet segment.' },
-                        { carId: car.id, action: 'INSPECTION', details: 'Initial technical and performance validation completed by engineers.' },
-                        { carId: car.id, action: 'STATUS_CHANGE', details: `Unit deployment finalized with status: ${status}` }
+                        { carId: car.id, action: 'ACQUISITION', details: 'Direct manufacturer acquisition for premium fleet.' },
+                        { carId: car.id, action: 'INSPECTION', details: 'PDI (Pre-Delivery Inspection) completed. Perfect condition.' },
+                        { carId: car.id, action: 'STATUS_CHANGE', details: `Vehicle listed as AVAILABLE in store.` }
                     ]
                 });
             }
         }
 
-        console.log('[LoadSeedService] ✅ Seed execution COMPLETED.');
+        console.log(`[LoadSeedService] ✅ Selective seed completed: ${this.cars.length} vehicles generated.`);
     }
 }
