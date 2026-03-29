@@ -16,6 +16,8 @@ import { AdminModule } from './modules/admin/admin.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import AppicationModule from './modules/app/app.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { StorageModule } from './modules/storage/storage.module';
+import { AiImagingModule } from './modules/ai-imaging/ai-imaging.module';
 
 @Module({
   imports: [
@@ -47,6 +49,8 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     BidsModule,
     AdminModule,
     NotificationsModule,
+    StorageModule,
+    AiImagingModule,
     EventEmitterModule.forRoot(),
   ],
   providers: [

@@ -25,8 +25,9 @@ export class LoadUserService {
             return;
         }
 
-        const salt = await bcrypt.genSalt();
-        const passwordHash = await bcrypt.hash('abc.12345', salt);
+        const salt = 10;
+        const rawPassword = process.env.INITIAL_USER_PASSWORD || 'ChangeMe123!';
+        const passwordHash = await bcrypt.hash(rawPassword, salt);
 
         const upsertUser = (
             email: string,
